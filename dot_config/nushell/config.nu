@@ -40,7 +40,7 @@ alias lg = ^lazygit
 $env.PROMPT_INDICATOR = "❭ "
 $env.PROMPT_MULTILINE_INDICATOR = " ::: "
 $env.PROMPT_COMMAND = {||
-  let dir_name = ($env.PWD | str replace $nu.home-path "~" | path basename)
+  let dir_name = ($env.PWD | str replace $env.HOME "~" | path basename)
   let git_branch = (do -i { git branch --show-current } | complete | get stdout | str trim)
 
   let dir_part = $"(ansi blue) ($dir_name)(ansi reset)"
