@@ -27,7 +27,7 @@ alias nu-open = open
 alias open = ^open
 
 # Nu eng setup config (converted to Nushell syntax)
-source ~/.zshrc.nu
+try { source ~/.zshrc.nu }
 $env.GITHUB_TOKEN = (^gh auth token | str trim)
 
 # Aliases
