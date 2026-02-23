@@ -1,0 +1,16 @@
+[alias]
+	st = status
+  ll = log --pretty=format:'%C(yellow)%h %Cred%ad %Cblue%an%Cgreen%d %Creset%s' --date=short
+[user]
+	email = vinicius.vieira.gomes@gmail.com
+	name = vvgomes
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+[url "git@github.com:"]
+	insteadOf = git://github.com/
+[init]
+	defaultBranch = main
+[core]
+	excludesfile = ~/.gitignore
