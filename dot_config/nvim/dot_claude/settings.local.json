@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//Users/vinicius.vgomes/Library/Application Support/nushell/**)",
+      "Read(//Users/vinicius.vgomes/.claude/**)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
