@@ -1,6 +1,6 @@
 [alias]
 	st = status
-  ll = log --pretty=format:'%C(yellow)%h %Cred%ad %Cblue%an%Cgreen%d %Creset%s' --date=short
+	ll = log --pretty=format:'%C(yellow)%h %Cred%ad %Cblue%an%Cgreen%d %Creset%s' --date=short
 [user]
 	email = vinicius.vieira.gomes@gmail.com
 	name = vvgomes
@@ -14,3 +14,5 @@
 	defaultBranch = main
 [core]
 	excludesfile = ~/.config/git/ignore
+[includeIf "gitdir:~/dev/gists/"]
+	path = ~/.config/git/gitignore-gists.ini
