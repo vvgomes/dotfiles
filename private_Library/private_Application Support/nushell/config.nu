@@ -1,10 +1,6 @@
 # See https://www.nushell.sh/book/configuration.html
 # Full config: config nu --doc | nu-highlight | less -R
 
-# Nushell binary `nu` has to be manually renamed to `nushell`
-# so it does not conflict with the `nu` command from Nucli
-$env.SHELL = "/opt/homebrew/bin/nushell"
-
 # Tools
 $env.PATH = ($env.PATH | prepend "/usr/local/sbin")
 $env.PATH = ($env.PATH | prepend "/usr/local/bin")
@@ -22,44 +18,17 @@ $env.config.edit_mode = "vi"
 $env.config.history.isolation = false
 $env.config.datetime_format.normal = "%Y-%m-%d %I:%M:%S%p"
 $env.LEIN_JVM_OPTS = "-Daether.dependencyCollector.impl=bf"
-
-# Conflict resolution
-alias nu-open = open
-alias open = ^open
-
-# Nu eng setup config (converted to Nushell syntax)
-# source ~/.zshrc.nu
-
 $env.GITHUB_TOKEN = (^gh auth token | str trim)
 
 # Aliases
+alias nu-open = open
+alias open = ^open
 alias g = git
 alias vim = nvim
 alias ff = fzf --preview "bat --color=always --style=numbers --line-range :500 {}"
 alias browse = yazi
 alias lg = ^lazygit
-
-# Functions
-
-# Disambiguates Nushell and Nucli by renaming Nushell binary
-def disambiguate [] {
-  if ("/opt/homebrew/bin/nu" | path exists) {
-    ^sudo mv /opt/homebrew/bin/nu /opt/homebrew/bin/nushell
-  }
-}
-
-# Safely upgrades Homebrew packages
-def brew-upgrade [] {
-  ^brew upgrade
-  disambiguate
-}
-
-# Opens ISA page for a given service
-def isa [service?: string] {
-  let default = ($env.PWD | path basename)
-  let service_name = ($service | default $default)
-  open $"https://backoffice.ist.nubank.world/isa/#/services/($service_name)/overview"
-}
+alias hl = nu-highlight
 
 # Prompt
 $env.PROMPT_INDICATOR = "❭ "
