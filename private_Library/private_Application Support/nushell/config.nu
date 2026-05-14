@@ -29,6 +29,19 @@ alias ff = fzf --preview "bat --color=always --style=numbers --line-range :500 {
 alias browse = yazi
 alias lg = ^lazygit
 alias hl = nu-highlight
+alias projects = tuido
+
+# Functions
+
+def brew-recent [] {
+  brew info --json=v2 --installed
+    | from json
+    | get formulae
+    | upsert install_time { |p| $p.installed.0.time }
+    | select name install_time
+    | sort-by install_time --reverse
+    | explore
+}
 
 # Prompt
 $env.PROMPT_INDICATOR = "❭ "
