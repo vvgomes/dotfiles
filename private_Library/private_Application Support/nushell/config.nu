@@ -29,6 +29,7 @@ alias ff = fzf --preview "bat --color=always --style=numbers --line-range :500 {
 alias browse = yazi
 alias lg = ^lazygit
 alias hl = nu-highlight
+alias idea = open -a "IntelliJ IDEA CE" .
 alias projects = tuido
 
 # Functions
