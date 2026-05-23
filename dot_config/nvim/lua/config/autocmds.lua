@@ -54,3 +54,12 @@ vim.api.nvim_create_autocmd("BufReadCmd", {
     vim.bo[0].filetype = vim.filetype.match({ name = inner_path, bufnr = 0 })
   end,
 })
+
+-- 4-space identation for Java only
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "java",
+  callback = function()
+    vim.bo.shiftwidth = 4
+    vim.bo.tabstop = 4
+  end,
+})
