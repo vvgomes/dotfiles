@@ -1,0 +1,9 @@
+{
+  "theme": "rose-pine",
+  "expanded_nodes": [
+    "conn:Demo SQLite",
+    "conn:Demo SQLite/folder:databases",
+    "conn:Demo SQLite/folder:databases/db:main",
+    "conn:Demo SQLite/folder:databases/db:main/folder:tables"
+  ]
+}
