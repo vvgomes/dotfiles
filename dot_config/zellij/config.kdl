@@ -329,7 +329,8 @@ themes {
     zucchini {
       text_unselected {
         base 160 170 195
-        background 34 36 54
+        // background 34 36 54
+        background 26 27 37
         emphasis_0 97 175 239
         emphasis_1 224 108 117
         emphasis_2 204 120 50
