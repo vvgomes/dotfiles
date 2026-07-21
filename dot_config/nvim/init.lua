@@ -11,4 +11,4 @@ vim.opt.wrap = false
 vim.opt.spell = false
 
 -- exec external commands with Nushell
-vim.opt.shell = "/opt/homebrew/bin/nushell"
+vim.opt.shell = "/opt/homebrew/bin/nu"
