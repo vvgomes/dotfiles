@@ -1,6 +1,8 @@
 # See https://www.nushell.sh/book/configuration.html
 # Full config: config nu --doc | nu-highlight | less -R
 
+$env.SHELL = "/opt/homebrew/bin/nu"
+
 # Tools
 $env.PATH = ($env.PATH | prepend "/usr/local/sbin")
 $env.PATH = ($env.PATH | prepend "/usr/local/bin")
