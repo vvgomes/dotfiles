@@ -1,8 +1,6 @@
 # See https://www.nushell.sh/book/configuration.html
 # Full config: config nu --doc | nu-highlight | less -R
 
-$env.SHELL = "/opt/homebrew/bin/nu"
-
 # Tools
 $env.PATH = ($env.PATH | prepend "/usr/local/sbin")
 $env.PATH = ($env.PATH | prepend "/usr/local/bin")
@@ -12,15 +10,26 @@ $env.PATH = ($env.PATH | prepend "/opt/homebrew/opt/openjdk/bin")
 $env.PATH = ($env.PATH | prepend "/usr/local/opt/curl/bin")
 $env.PATH = ($env.PATH | prepend $"($env.HOME)/.local/bin")
 
+## DA-specific
+$env.PATH = ($env.PATH | prepend $"($env.HOME)/.daml/bin")
+$env.PATH = ($env.PATH | prepend $"($env.HOME)/.dpm/bin")
+
+# Env vars (move them to env.nu)
+$env.SHELL = "/opt/homebrew/bin/nu"
+$env.EDITOR = "nvim"
+$env.JAVA_HOME = "/opt/homebrew/opt/openjdk/libexec/openjdk.jdk/Contents/Home"
+$env.LEIN_JVM_OPTS = "-Daether.dependencyCollector.impl=bf"
+$env.GITHUB_TOKEN = (^gh auth token | str trim)
+
+## DA-specific
+$env.DPM_HOME = $"($env.HOME)/.dpm/"
+
 # Basic preferences
 $env.config.show_banner = false
-$env.EDITOR = "nvim"
 $env.config.buffer_editor = "nvim"
 $env.config.edit_mode = "vi"
 $env.config.history.isolation = false
 $env.config.datetime_format.normal = "%Y-%m-%d %I:%M:%S%p"
-$env.LEIN_JVM_OPTS = "-Daether.dependencyCollector.impl=bf"
-$env.GITHUB_TOKEN = (^gh auth token | str trim)
 
 # Aliases
 alias nu-open = open
