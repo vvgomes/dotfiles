@@ -2,8 +2,8 @@
 	st = status
 	ll = log --pretty=format:'%C(yellow)%h %Cred%ad %Cblue%an%Cgreen%d %Creset%s' --date=short
 [user]
-	email = vinicius.vieira.gomes@gmail.com
-	name = vvgomes
+	email = vinicius.vieira-gomes@digitalasset.com
+	name = vvgomes-da
 [color]
 	diff = auto
 	status = auto

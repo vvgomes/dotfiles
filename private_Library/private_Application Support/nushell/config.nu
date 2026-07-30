@@ -10,6 +10,10 @@ $env.PATH = ($env.PATH | prepend "/opt/homebrew/opt/openjdk/bin")
 $env.PATH = ($env.PATH | prepend "/usr/local/opt/curl/bin")
 $env.PATH = ($env.PATH | prepend $"($env.HOME)/.local/bin")
 
+# Haskell (GHCup)
+$env.PATH = ($env.PATH | prepend $"($env.HOME)/.ghcup/bin")
+$env.PATH = ($env.PATH | prepend $"($env.HOME)/.cabal/bin")
+
 ## DA-specific
 $env.PATH = ($env.PATH | prepend $"($env.HOME)/.daml/bin")
 $env.PATH = ($env.PATH | prepend $"($env.HOME)/.dpm/bin")
@@ -42,6 +46,8 @@ alias lg = ^lazygit
 alias hl = nu-highlight
 alias idea = open -a "IntelliJ IDEA CE" .
 alias projects = tuido
+alias python = python3
+alias lec = print $env.LAST_EXIT_CODE
 
 # Functions
 
