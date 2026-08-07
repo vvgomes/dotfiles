@@ -10,6 +10,7 @@ return {
     { "<leader>gt", "<cmd>DamlRunScript<cr>", desc = "Run Daml Script" },
   },
   opts = {
-    lsp = { cmd = { "dpm", "damlc", "multi-ide" } },
+    --lsp = { cmd = { "dpm", "damlc", "multi-ide" } },
+    lsp = { cmd = { "dpm", "damlc", "ide", "--scripts", "yes" } },
   },
 }
