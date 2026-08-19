@@ -16,3 +16,14 @@
 #
 # You can remove these comments if you want or leave
 # them for future reference.
+
+# Add Nix binaries to PATH (Nushell does not source the Bash/Zsh Nix profile)
+$env.PATH = (
+    $env.PATH
+    | split row (char esep)
+    | prepend [
+        "/nix/var/nix/profiles/default/bin"
+        $"($env.HOME)/.nix-profile/bin"
+    ]
+    | uniq
+)
