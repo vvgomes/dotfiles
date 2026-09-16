@@ -24,6 +24,7 @@ $env.EDITOR = "nvim"
 $env.JAVA_HOME = "/opt/homebrew/opt/openjdk/libexec/openjdk.jdk/Contents/Home"
 $env.LEIN_JVM_OPTS = "-Daether.dependencyCollector.impl=bf"
 $env.GITHUB_TOKEN = (^gh auth token | str trim)
+$env.GH_TOKEN = (^gh auth token | str trim)
 
 ## DA-specific
 $env.DPM_HOME = $"($env.HOME)/.dpm/"
