@@ -45,8 +45,9 @@
 command = /opt/homebrew/bin/nu
 theme = "tokyonight"
 macos-titlebar-style = hidden
-window-padding-x = 7, 0
-window-padding-y = 9, 0
+window-decoration = none
+window-padding-x = 6, 5
+window-padding-y = 7, 0
 font-family = "JetBrainsMono Nerd Font"
 font-size = 15
 cursor-style = block
