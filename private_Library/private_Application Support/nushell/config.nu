@@ -33,7 +33,8 @@ $env.DPM_HOME = $"($env.HOME)/.dpm/"
 $env.config.show_banner = false
 $env.config.buffer_editor = "nvim"
 $env.config.edit_mode = "vi"
-$env.config.history.isolation = false
+$env.config.history.file_format = "sqlite"
+$env.config.history.isolation = true
 $env.config.datetime_format.normal = "%Y-%m-%d %I:%M:%S%p"
 
 # Direnv config
