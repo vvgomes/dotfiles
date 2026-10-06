@@ -70,6 +70,7 @@ alias idea = open -a "IntelliJ IDEA CE" .
 alias projects = tuido
 alias python = python3
 alias lec = print $env.LAST_EXIT_CODE
+alias hal = opencode
 
 # Functions
 
