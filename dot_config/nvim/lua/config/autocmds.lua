@@ -55,6 +55,14 @@ vim.api.nvim_create_autocmd("BufReadCmd", {
   end,
 })
 
+-- Disable line wrapping for markdown (LazyVim enables it by default via lazyvim_wrap_spell)
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "markdown",
+  callback = function()
+    vim.opt_local.wrap = false
+  end,
+})
+
 -- 4-space identation for Java only
 vim.api.nvim_create_autocmd("FileType", {
   pattern = "java",
