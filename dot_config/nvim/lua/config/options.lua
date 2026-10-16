@@ -14,4 +14,7 @@ vim.opt.fillchars = {
 }
 
 -- Ensure statusline has bottom border
-vim.opt.laststatus = 3  -- Global statusline
+vim.opt.laststatus = 3 -- Global statusline
+
+-- Disable line wrapping
+vim.opt.wrap = false

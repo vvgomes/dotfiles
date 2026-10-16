@@ -12,5 +12,6 @@ return {
   opts = {
     --lsp = { cmd = { "dpm", "damlc", "multi-ide" } },
     lsp = { cmd = { "dpm", "damlc", "ide", "--scripts", "yes" } },
+    -- lsp = { cmd = { "daml", "ide", "--scripts", "yes" } },
   },
 }

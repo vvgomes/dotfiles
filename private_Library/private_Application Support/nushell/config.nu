@@ -74,6 +74,23 @@ alias hal = opencode
 
 # Functions
 
+def gh-switch [username: string] {
+  let status = (gh auth status | complete)
+
+  if $status.exit_code != 0 {
+    error make { msg: $"`gh auth status` failed: ($status.stderr)" }
+  }
+
+  if ($status.stdout | find $"account ($username) \(keyring\)" | is-empty) {
+    error make { msg: $"Account '($username)' is not authenticated with gh. Run `gh auth login` first." }
+  }
+
+  hide-env --ignore-errors GH_TOKEN
+  hide-env --ignore-errors GITHUB_TOKEN
+
+  gh auth switch --user $username
+}
+
 def brew-recent [] {
   brew info --json=v2 --installed
     | from json
