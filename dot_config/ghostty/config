@@ -54,3 +54,4 @@ cursor-style = block
 cursor-style-blink = true
 
 keybind = shift+enter=text:\x1b\r
+keybind = global:cmd+f1=toggle_quick_terminal

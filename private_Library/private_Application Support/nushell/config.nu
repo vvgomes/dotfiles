@@ -51,7 +51,22 @@ $env.config.hooks.env_change.PWD ++= [{||
     return
   }
 
-  direnv export json | from json | default {} | update cells --columns [ PATH ] {
+  # Run direnv via `complete` so a non-zero exit (e.g. a slow/interrupted
+  # nix+devenv build on first load) doesn't throw and abort the hook.
+  let export = (direnv export json | complete)
+  if $export.exit_code != 0 {
+    return
+  }
+
+  # A mid-build/incomplete export can emit empty or non-JSON stdout. Guard
+  # against it so we never clobber the current env with nothing: only load
+  # when we actually got a non-empty object back.
+  let parsed = ($export.stdout | from json | default {})
+  if ($parsed | is-empty) {
+    return
+  }
+
+  $parsed | update cells --columns [ PATH ] {
     # If direnv changes the PATH, it will become a string and we need to re-convert it to a list
     do (env-conversions).path.from_string $in
   } | load-env
