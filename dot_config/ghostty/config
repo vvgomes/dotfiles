@@ -45,13 +45,17 @@
 command = /opt/homebrew/bin/nu
 theme = "tokyonight"
 macos-titlebar-style = hidden
+
 window-decoration = none
 window-padding-x = 10, 5
 window-padding-y = 10, 5
+
 font-family = "JetBrainsMono Nerd Font"
 font-size = 15
+
 cursor-style = block
 cursor-style-blink = true
 
 keybind = shift+enter=text:\x1b\r
 keybind = global:cmd+f1=toggle_quick_terminal
+quick-terminal-size = 70%,50%
